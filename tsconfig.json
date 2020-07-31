@@ -7,6 +7,7 @@
 
     "outDir": "./dist",
     "rootDir": "./src",
+    "baseUrl": ".",
 
     "removeComments": true,
 
@@ -19,6 +20,11 @@
 
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@controllers/*": ["./src/controllers/*"],
+      "@models/*": ["./src/models/*"],
+      "@config": ["./src/config/*"]
+    }
   }
 }
