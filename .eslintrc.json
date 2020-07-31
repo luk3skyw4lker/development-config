@@ -1,7 +1,8 @@
 {
   "env": {
     "es2020": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": ["airbnb-base"],
   "parser": "@typescript-eslint/parser",
@@ -13,14 +14,17 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".ts"]
-      }
+        "extensions": [".js", ".ts", ".json"]
+      },
+      "typescript": {}
     }
   },
   "rules": {
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "prettier/prettier": "off",
+    "comma-dangle": "off",
+    "lines-between-class-members": "off",
     "import-helpers/order-imports": [
       "warn",
       {
