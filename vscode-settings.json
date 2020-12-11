@@ -1,0 +1,107 @@
+{
+	"explorer.compactFolders": false,
+
+	"workbench.iconTheme": "material-icon-theme",
+	"workbench.colorTheme": "Omni",
+	"workbench.startupEditor": "readme",
+	"workbench.activityBar.visible": true,
+
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.fontFamily": "Fira Code",
+	"editor.fontLigatures": true,
+	"editor.maxTokenizationLineLength": 200000,
+	"editor.tabSize": 2,
+	"editor.detectIndentation": true,
+	"editor.insertSpaces": false,
+	"editor.minimap.enabled": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true
+	},
+
+	"prettier.trailingComma": "none",
+	"prettier.endOfLine": "auto",
+	"prettier.bracketSpacing": true,
+	"prettier.semi": true,
+	"prettier.useTabs": true,
+	"prettier.arrowParens": "avoid",
+	"prettier.singleQuote": true,
+	"prettier.requireConfig": false,
+
+	"terminal.integrated.shell.windows": "C:\\Users\\Lord Vader\\AppData\\Local\\Microsoft\\WindowsApps\\debian.exe",
+	"terminal.integrated.shell.linux": "/bin/zsh",
+
+	"material-icon-theme.folders.associations": {
+		"__mocks__": "mock",
+		"__tests__": "test",
+		"fixtures": "shared",
+		"integration": "lib",
+		"repositories": "mappings",
+		"useCases": "controller",
+		"entities": "class",
+		"infra": "app",
+		"schemas": "class",
+		"typeorm": "database",
+		"http": "container",
+		"migrations": "tools",
+		"modules": "components",
+		"implementations": "core",
+		"dtos": "typescript",
+		"fakes": "mock",
+		"websockets": "pipe",
+		"protos": "pipe",
+		"grpc": "pipe",
+		"providers": "include",
+		"contexts": "shared",
+		"cronjobs": "event",
+		"responses": "controller",
+		"seed": "helper",
+		"variables": "keys"
+	},
+	"material-icon-theme.files.associations": {
+		"tsconfig.json": "tune",
+		"default": "settings",
+		"entrypoint": "console"
+	},
+
+	"typescript.preferences.importModuleSpecifier": "non-relative",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact"
+	},
+
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[dart]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnType": true,
+		"editor.rulers": [80],
+		"editor.selectionHighlight": false,
+		"editor.suggest.snippetsPreventQuickSuggestions": false,
+		"editor.suggestSelection": "first",
+		"editor.tabCompletion": "onlySnippets",
+		"editor.wordBasedSuggestions": false
+	},
+
+	"window.zoomLevel": 0,
+	"go.formatTool": "goimports",
+	"importCost.debug": true
+}
