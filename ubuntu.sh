@@ -3,15 +3,18 @@ cd ~
 
 sudo apt-get update
 
-echo 'Installing curl' 
+echo 'Installing GIT...'
+sudo apt install git fonts-firacode
+
+echo 'Installing curl...' 
 sudo apt install curl -y
 
 git config --global credential.helper store
 
-echo 'Creating work dir'
+echo 'Creating work dir...'
 mkdir /home/luk3skyw4lker/Documents/Bristom
 
-echo 'Cloning work repos'
+echo 'Cloning work repos...'
 cd /home/luk3skyw4lker/Documents/Bristom
 
 git clone -q https://code.supera.com.br/Bristom/api.git bristom-strapi
@@ -46,6 +49,22 @@ git config user.email "lucashenriqueblemos@gmail.com"
 
 cd ..
 
+git clone -q https://code.supera.com.br/Bristom/bristom-painel.git
+cd bristom-painel
+
+git config user.name "Lucas Henrique"
+git config user.email "lucashenriqueblemos@gmail.com"
+
+cd ..
+
+git clone -q https://code.supera.com.br/Bristom/ultralog-collector.git
+cd ultralog-collector
+
+git config user.name "Lucas Henrique"
+git config user.email "lucashenriqueblemos@gmail.com"
+
+cd ..
+
 echo 'Creating personal dirs'
 mkdir /home/luk3skyw4lker/Documents/Personal
 
@@ -58,13 +77,24 @@ cd luk3skyw4lker-blog
 git config user.name "luk3skyw4lker"
 git config user.email "lucashenriqueblemos@gmail.com"
 
+cd ..
+
+git clone -q https://github.com/luk3skyw4lker/development-config.git
+cd development-config
+
+git config user.name "luk3skyw4lker"
+git config user.email "lucashenriqueblemos@gmail.com"
+
 cd ~
 
 echo 'Installing ZSH and themes'
 sudo apt-get install zsh -y
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
-chsh -s /bin/zsh
+
+zsh -c "git clone https://github.com/denysdovhan/spaceship-prompt.git \"$ZSH_CUSTOM/themes/spaceship-prompt\" --depth=1 && ln -s \"$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme\" \"$ZSH_CUSTOM/themes/spaceship.zsh-theme\""
+
+sudo mv /home/luk3skyw4lker/Documents/Personal/development-config/.zshrc /home/
 
 echo 'Installing code'
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
