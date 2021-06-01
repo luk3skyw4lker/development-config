@@ -96,6 +96,12 @@ zsh -c "git clone https://github.com/denysdovhan/spaceship-prompt.git \"$ZSH_CUS
 
 sudo mv /home/luk3skyw4lker/Documents/Personal/development-config/.zshrc /home/
 
+echo "Installing Insomnia"
+echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+sudo apt update
+sudo apt install insomnia
+
 echo 'Installing code'
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
