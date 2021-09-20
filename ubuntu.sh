@@ -122,6 +122,8 @@ code --install-extension golang.go
 code --install-extension esbenp.prettier-vscode
 code --install-extension rocketseat.rocketseatreactjs
 code --install-extension ms-azuretools.vscode-docker
+code --install-extension adpyke.codesnap
+code --install-extension rangav.vscode-thunder-client
 
 echo 'Installing spotify' 
 snap install spotify
