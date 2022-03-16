@@ -16,6 +16,7 @@
 	"editor.insertSpaces": false,
 	"editor.minimap.enabled": false,
 	"editor.guides.bracketPairs": true,
+	"editor.bracketPairColorization.enabled": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true
 	},
