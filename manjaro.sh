@@ -1,16 +1,24 @@
 #!/bin/sh
 cd ~
 
-sudo apt-get update
-
+$(clear >&2)
 echo 'Installing GIT...'
-sudo apt install git fonts-firacode
+sudo pacman -S --needed base-devel git
 
-echo 'Installing curl...' 
-sudo apt install curl -y
+echo 'Installing Yay...'
+git clone https://aur.archlinux.org/yay-git.git
+cd yay-git
+makepkg -si
+
+cd ~
+
+echo 'Installing Fira Code...'
+sudo pacman -S ttf-fira-code
 
 git config --global credential.helper store
 
+sleep 5
+$(clear >&2)
 echo 'Creating work dir...'
 mkdir /home/luk3skyw4lker/Documents/Bristom
 
@@ -87,8 +95,10 @@ git config user.email "lucashenriqueblemos@gmail.com"
 
 cd ~
 
+sleep 5
+$(clear >&2)
 echo 'Installing ZSH and themes'
-sudo apt-get install zsh -y
+sudo pacman -S zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 sh -c "$(curl -fsSL https://git.io/zinit-install)"
 
@@ -96,19 +106,14 @@ zsh -c "git clone https://github.com/denysdovhan/spaceship-prompt.git \"$ZSH_CUS
 
 sudo mv /home/luk3skyw4lker/Documents/Personal/development-config/.zshrc /home/
 
-echo "Installing Insomnia"
-echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
-    | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-sudo apt update
-sudo apt install insomnia
+# echo "Installing Insomnia"
+# echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
+#     | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+# sudo apt update
+# sudo apt install insomnia
 
 echo 'Installing code'
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt-get install apt-transport-https -y
-sudo apt-get update
-sudo apt-get install code -y # or code-insiders
+yay -S visual-studio-code-bin
 
 echo 'Installing VSCode extensions'
 code --install-extension naumovs.color-highlight
@@ -129,21 +134,20 @@ echo 'Installing spotify'
 snap install spotify
 
 echo 'Installing chrome' 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+yay -S google-chrome
+
 
 echo 'Installing NVM' 
 sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash)"
 
 echo 'Installing docker' 
-sudo apt-get remove docker docker-engine docker.io
-sudo apt install docker.io -y
-sudo systemctl start docker
-sudo systemctl enable docker
+sudo pacman -S docker
+sudo systemctl start docker.service
+sudo systemctl enable docker.service
 docker --version
 
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
+# sudo groupadd docker
+# sudo usermod -aG docker $USER
+# newgrp docker
 
 echo "Setup finished!"
