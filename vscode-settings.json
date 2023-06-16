@@ -1,13 +1,16 @@
 {
 	"explorer.compactFolders": false,
+	"explorer.confirmDragAndDrop": false,
 
+	"workbench.layoutControl.enabled": false,
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.colorTheme": "Omni",
-	"workbench.startupEditor": "readme",
+	"workbench.startupEditor": "welcomePage",
 	"workbench.activityBar.visible": true,
 
-	"editor.formatOnPaste": true,
-	"editor.formatOnSave": true,
+	"mergeEditor.diffAlgorithm": "advanced",
+	"editor.stickyScroll.enabled": false,
+	"editor.linkedEditing": true,
 	"editor.fontFamily": "Fira Code",
 	"editor.fontLigatures": true,
 	"editor.maxTokenizationLineLength": 200000,
@@ -15,8 +18,8 @@
 	"editor.detectIndentation": true,
 	"editor.insertSpaces": false,
 	"editor.minimap.enabled": false,
-	"editor.guides.bracketPairs": true,
 	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": true,
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true
 	},
@@ -76,7 +79,10 @@
 		"cronjobs": "event",
 		"responses": "controller",
 		"seed": "helper",
-		"variables": "keys"
+		"variables": "keys",
+		"PERMISSIONS": "tune",
+		"repository": "database",
+		"payload": "helper"
 	},
 	"material-icon-theme.files.associations": {
 		"tsconfig.json": "tune",
@@ -89,7 +95,9 @@
 	"javascript.updateImportsOnFileMove.enabled": "always",
 
 	"emmet.includeLanguages": {
-		"javascript": "javascriptreact"
+		"javascript": "javascriptreact",
+		"erb": "html",
+		"ruby": "html"
 	},
 
 	"[typescriptreact]": {
@@ -120,8 +128,52 @@
 		"editor.tabCompletion": "onlySnippets",
 		"editor.wordBasedSuggestions": false
 	},
+	"deno.path": "/home/luk3skyw4lker/.deno/bin/deno",
 
-	"window.zoomLevel": 2,
+	"git.mergeEditor": true,
+	"git.openRepositoryInParentFolders": "never",
+	"git.suggestSmartCommit": false,
+
 	"go.formatTool": "goimports",
-	"importCost.debug": true
+	"go.toolsManagement.autoUpdate": true,
+
+	"window.titleBarStyle": "custom",
+	"window.titleSeparator": " | ",
+	"window.dialogStyle": "custom",
+	"window.zoomLevel": 3,
+
+	"security.workspace.trust.untrustedFiles": "open",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"gitlens.advanced.messages": {
+		"suppressLineUncommittedWarning": true
+	},
+	"yaml.customTags": [
+		"!And",
+		"!And sequence",
+		"!If",
+		"!If sequence",
+		"!Not",
+		"!Not sequence",
+		"!Equals",
+		"!Equals sequence",
+		"!Or",
+		"!Or sequence",
+		"!FindInMap",
+		"!FindInMap sequence",
+		"!Base64",
+		"!Join",
+		"!Join sequence",
+		"!Cidr",
+		"!Ref",
+		"!Sub",
+		"!Sub sequence",
+		"!GetAtt",
+		"!GetAZs",
+		"!ImportValue",
+		"!ImportValue sequence",
+		"!Select",
+		"!Select sequence",
+		"!Split",
+		"!Split sequence"
+	]
 }
